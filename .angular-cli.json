@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "learn-news"
+    "name": "learn-features"
   },
   "apps": [
     {
@@ -17,9 +17,9 @@
       "test": "test.ts",
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
-      "prefix": "app",
+      "prefix": "fd",
       "styles": [
-        "styles.css"
+        "styles.styl"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
@@ -54,13 +54,11 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
+    "styleExt": "styl",
     "class": {
       "spec": false
     },
     "component": {
-      "inlineStyle": true,
-      "inlineTemplate": true,
       "spec": false
     },
     "directive": {

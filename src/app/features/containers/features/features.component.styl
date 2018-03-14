@@ -1,0 +1,30 @@
+.features
+  padding-top: 10px
+  &__control
+    display: flex
+    padding: 0 5px
+  &__list
+    padding-top: 10px
+    display: flex
+    justify-content: flex-start
+    flex-wrap: wrap
+  &__item
+    flex-basis: 25%
+    padding: 0 5px 10px
+  &__add
+    margin-left: auto
+
+@media screen and (max-width: 740px)
+  .features
+    &__item
+      flex-basis: 33.33333%
+
+@media screen and (max-width: 540px)
+  .features
+    &__item
+      flex-basis: 50%
+
+@media screen and (max-width: 320px)
+  .features
+    &__item
+      flex-basis: 100%
