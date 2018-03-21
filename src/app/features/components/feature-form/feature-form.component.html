@@ -1,0 +1,27 @@
+<form class="feature-form" [formGroup]="model" (submit)="submit()">
+  <div class="input__wrapper">
+    <label class="feature-form__label input__label">
+      <span class="feature-form__span input__text">Title</span>
+      <input formControlName="title" class="input" />
+    </label>
+    <div class="input__info _error" *ngIf="titleControl.touched && titleControl.invalid">
+      <div class="error" *ngIf="titleControl.errors['required']">This field is required</div>
+      <div class="error" *ngIf="titleControl.errors['minlength']">This field should have more than {{ titleControl.errors['minlength']['requiredLength'] }} characters</div>
+      <div class="error" *ngIf="titleControl.errors['maxlength']">This field should have less than {{ titleControl.errors['maxlength']['requiredLength'] }} characters</div>
+    </div>
+  </div>
+
+  <div class="input__wrapper">
+    <label class="feature-form__label input__label">
+      <span class="feature-form__span input__text">Description</span>
+      <input formControlName="description" class="input" />
+    </label>
+    <div class="input__info _error" *ngIf="descriptionControl.touched && descriptionControl.invalid">
+      <div class="error" *ngIf="descriptionControl.errors['required']">This field is required</div>
+      <div class="error" *ngIf="descriptionControl.errors['minlength']">This field should have more than {{ descriptionControl.errors['minlength']['requiredLength'] }} characters</div>
+      <div class="error" *ngIf="descriptionControl.errors['maxlength']">This field should have less than {{ descriptionControl.errors['maxlength']['requiredLength'] }} characters</div>
+    </div>
+  </div>
+
+  <ng-content></ng-content>
+</form>

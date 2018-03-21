@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'fd-root',
   template: `
       <div class="wrapper">
-          <fd-features></fd-features>
+          <fd-add-feature></fd-add-feature>
       </div>
   `,
   styles: []
