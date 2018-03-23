@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FeaturesService } from '../../services/features.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'fd-add-feature',
@@ -12,7 +14,9 @@ export class AddFeatureComponent {
     description: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(100)]]
   });
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,
+              private router: Router,
+              private featuresService: FeaturesService) {
   }
 
   submit({ form, value }) {
@@ -22,7 +26,9 @@ export class AddFeatureComponent {
     }
 
     if (form.valid) {
-      console.log(value);
+      this.featuresService.createFeature(value).subscribe((response) => {
+        this.router.navigate(['/features']);
+      })
     }
   }
 }

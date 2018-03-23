@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { FeaturesModule } from "./features/features.module";
+import { AppRouterModule } from './app-router.module';
 
 @NgModule({
   declarations: [
@@ -11,6 +12,7 @@ import { FeaturesModule } from "./features/features.module";
   imports: [
     BrowserModule,
     FeaturesModule,
+    AppRouterModule,
   ],
   bootstrap: [AppComponent]
 })

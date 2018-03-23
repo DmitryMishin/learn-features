@@ -9,6 +9,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FeaturesPipe } from './pipes/features.pipe';
 import { AddFeatureComponent } from './containers/add-feature/add-feature.component';
 import { FeatureFormComponent } from './components/feature-form/feature-form.component';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { FeaturesRouterModule } from './features-router.module';
+import { FeaturesResolverService } from './services/features-resolver.service';
 
 const exportedComponents = [
   FeaturesComponent,
@@ -20,6 +24,9 @@ const exportedComponents = [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
+    RouterModule,
+    FeaturesRouterModule,
   ],
   declarations: [
     exportedComponents,
@@ -34,6 +41,7 @@ const exportedComponents = [
   ],
   providers: [
     FeaturesService,
+    FeaturesResolverService,
   ]
 })
 export class FeaturesModule {

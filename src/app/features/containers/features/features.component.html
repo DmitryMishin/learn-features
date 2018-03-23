@@ -1,7 +1,6 @@
 <div class="features">
   <div class="features__control">
     <fd-search-bar fdOpenSearch [normalWidth]="200" [focusWidth]="300" [(query)]="query"></fd-search-bar>
-    <button type="button" class="btn btn-primary features__add" (click)="addFeature()">Add feature</button>
   </div>
 
   <div class="features__list">
@@ -11,4 +10,6 @@
                   [feature]="item"
                   (remove)="removeFeature($event)"></fd-feature-item>
   </div>
+
+  <router-outlet></router-outlet>
 </div>
